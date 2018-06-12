@@ -1,0 +1,2 @@
+# wxmini
+weixin miniprogram
