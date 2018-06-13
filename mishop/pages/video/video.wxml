@@ -1,0 +1,5 @@
+<!--pages/video/video.wxml-->
+<view class="container">
+   <video class="container" src="{{src}}" binderror="videoErrorCallback" autoplay controls></video> 
+  <!-- <view>132</view> -->
+</view>

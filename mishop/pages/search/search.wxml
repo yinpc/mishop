@@ -1,0 +1,26 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+  <view class="header">
+    <!-- <view class="nav-back"></view> -->
+    <view class="search-input">
+      <image src='../../images/search.png' />
+      <input class="input" type="text" focus="true" confirm-type="search" bindinput ="kwInput" bindconfirm="inputConfirm"></input>
+    </view>
+    <text bindtap="search">搜索</text>
+  </view>
+  <view class="history">
+    <text class="history-title">历史记录</text>
+    <view class="history-items">
+      <view>键盘</view>
+      <view>真皮板鞋</view>
+      <view>体脂称</view>
+      <view>旅行箱</view>
+      <view>移动电源</view>
+      <view>太阳镜</view>
+      <view>智能摄像机</view>
+      <view>葡萄酒</view>
+      <view>台灯</view>
+      <view>空调被</view>
+    </view>
+  </view>
+</view>
