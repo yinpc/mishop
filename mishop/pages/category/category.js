@@ -7,14 +7,38 @@ Page({
   data: {
     currentTab: 0,  //对应样式变化
     indicatorY: 0,
-    categoryArray: ['手机', '居家', '家电', '服饰', '智能', '影音', '笔记本', '餐厨', '洗护', '饮食', '健康', '日杂', '配件', '出行', '婴童'], //左侧导航栏内容  
+    // categoryArray: ['手机', '居家', '家电', '服饰', '智能', '影音', '笔记本', '餐厨', '洗护', '饮食', '健康', '日杂', '配件', '出行', '婴童'], //左侧导航栏内容
+    categoryList: [],
+    subcategoryList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
+    wx.request({
+      url: 'http://192.168.28.205:8000/category/',
+      data: {
+        category_type: '1'
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        if (res.data.length > 0) {
+          // var categoryList = []
+          // for (var i = 0; i < res.data.length; i++) {
+          //   categoryList.push(res.data[i]['name'])
+          // }
+          _this.setData({
+            categoryList: res.data,
+            subcategoryList: res.data[0]['subcategories']
+          })
+        }
 
+      }
+    })
   },
 
   /**

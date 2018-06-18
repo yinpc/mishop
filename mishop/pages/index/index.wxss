@@ -107,6 +107,11 @@ swiper {
   margin: 100rpx 0 0 0;
 }
 
+.page-items {
+  display: flex;
+  border-top: 1rpx solid #eee;
+}
+
 .page-title {
   height: 80rpx;
   line-height: 80rpx;
@@ -129,35 +134,12 @@ swiper {
   position: relative;
 }
 
-.item-left-first {
-  width: 50%;
-  height: 300rpx;
-  float: left;
-  border-right: 1px solid #eee;
-  border-bottom: 1rpx solid #eee;
-  border-top: 1rpx solid #eee;
-  position: relative;
-}
-
 .item-right {
   width: 50%;
   height: 300rpx;
   float: left;
   border-bottom: 1px solid #eee;
   position: relative;
-}
-
-.item-right-first {
-  width: 50%;
-  height: 300rpx;
-  float: left;
-  border-bottom: 1px solid #eee;
-  border-top: 1rpx solid #eee;
-  position: relative;
-}
-
-.page-item-row {
-  display: flex;
 }
 
 .item-right-img {

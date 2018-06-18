@@ -17,7 +17,7 @@
   </view>
   <view class="page-section withtop">
     <swiper indicator-dots="true" autoplay="true" circular="true">
-      <block wx:for="{{background}}" wx:for-item="image">
+      <block wx:for="{{background}}" wx:key="banner" wx:for-item="image">
         <swiper-item>
           <image class="swiper-item" src="{{image}}" mode='aspectFill'></image>
         </swiper-item>
@@ -29,26 +29,39 @@
       <text class='page-title-text'>优惠活动</text>
       <image class='page-title-img' src="../../images/arrow.png"></image>
     </view>
-    <view class='page-items'>
+    <view class='page-items' wx:if="{{goods}}">
+      <view wx:for="{{goods}}" wx:key='good-rows' class='{{index % 2 == 0 ? "item-left" : "item-right"}}'>
+        <view class='item-name nowrap-text'>{{item.name}}</view>
+        <view class='item-intro nowrap-text'>{{item.goods_brief}}</view>
+        <view class='item-price'>{{item.shop_price}}</view>
+        <view>
+          <text class='item-intro-tag' wx:if='{{item.goods_red_label}}'>{{item.goods_red_label}}</text>
+          <image class="item-right-img" src="{{item.goods_front_image}}"></image>
+        </view>
+      </view>
+      <!-- <view class='page-items'>
       <view class='page-item-row'>
         <view class='item-left-first'>
           <text class='item-name nowrap-text'>石头扫地机器人</text>
           <text class='item-intro nowrap-text'>米家扫地机器人团队出品</text>
           <text class='item-price'>￥2499</text>
-          <!-- <text class='item-price-old'>￥2599</text> -->
-          <view><text class='item-intro-tag'>直降200</text></view>
-          <view><text class='item-intro-tag'>直降200</text></view>
+          <view>
+            <text class='item-intro-tag'>直降200</text>
+          </view>
+          <view>
+            <text class='item-intro-tag'>直降200</text>
+          </view>
           <image class="item-right-img" src="../../images/product01.jpg"></image>
         </view>
         <view class='item-right-first'>
-            <text class='item-name nowrap-text'>头层水牛皮席三件套</text>
-            <text class='item-intro nowrap-text'>100%厚切头层牛皮，经久耐用，纳凉珍品，全家适用</text>
-            <text class='item-price'>￥1399</text>
-            <text class='item-intro-tag'>直降100</text>
-            <image class="item-right-img" src="../../images/product02.jpg"></image>
+          <text class='item-name nowrap-text'>头层水牛皮席三件套</text>
+          <text class='item-intro nowrap-text'>100%厚切头层牛皮，经久耐用，纳凉珍品，全家适用</text>
+          <text class='item-price'>￥1399</text>
+          <text class='item-intro-tag'>直降100</text>
+          <image class="item-right-img" src="../../images/product02.jpg"></image>
         </view>
-      </view>
-      <view class='page-item-row'>
+      </view>  -->
+      <!-- <view class='page-item-row'>
         <view class='item-left'>
           <text class='item-name nowrap-text'>小米米家空气净化器 2S</text>
           <text class='item-intro nowrap-text'>OLED显示屏</text>
@@ -63,7 +76,7 @@
           <text class='item-intro-tag'>5元优惠券</text>
           <image class="item-right-img" src="../../images/product04.jpg"></image>
         </view>
-      </view>
+      </view> -->
     </view>
   </view>
 </view>
