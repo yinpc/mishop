@@ -1,0 +1,29 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <swiper indicator-dots="true" circular="false">
+    <block wx:for="{{detailImgs}}">
+      <swiper-item>
+        <!-- <video style='height:350px;width:750rpx' src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"></video> --        
+        ss>
+        <!-- <image class="swiper-item" src="{{item.image}}" data-src="{{item.image}}" mode='aspectFill' bindtap='playvideo'></image> -->
+        <!-- <image class="video-play" src="../../images/play.png"></image> -->
+        <image class="swiper-item" src="{{item.image}}" data-info="{{item}}" mode='aspectFill' bindtap='previewImage'></image>
+        <view wx:if="{{item.isVideo}}">
+          <image class="video-play" src="../../images/play.png" data-info="{{item}}" bindtap='showVideo'></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="title-view">
+    <view class="item-name">米家扫地机器人</view>
+    <view class="item-intro">高精度激光测距，智能规划路径，1800Pa大风压澎湃吸力，远程智能控制，定时清扫，大电池持久清扫</view>
+    <view class="price-view">
+      <view class="price-rmb">
+        <view class="item-rmb">￥</view>
+        <view class="item-price">1499</view>
+      </view>
+      <view class='item-price-old'>￥1699</view>
+      <view class='item-intro-tag'>直降200</view>
+    </view>
+  </view>
+</view>

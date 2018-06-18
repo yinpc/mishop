@@ -1,0 +1,22 @@
+<view class="container">
+  <!--分类导航栏-->
+  <scroll-view class='left-navbar' scroll-y="true">
+    <view wx:for="{{categoryList}}" class="{{ currentTab == index ? 'active' : '' }}" wx:key="category" bindtap="{{ currentTab != index ? 'navbarTap':'' }}" id="{{index}}">{{item.name}}
+    </view>
+    <view class="slide" style="transform: translateY( {{indicatorY}}rpx);"></view>
+  </scroll-view>
+  <scroll-view id="right" scroll-y="true" scroll-top="{{scrollTop}}">
+    <!--顶部图片-->
+    <view class="goods-banner">
+      <image class="img-banner" src="{{categoryList[currentTab].category_front_image}}" wx:if="{{categoryList[currentTab].category_front_image}}" mode="scaleToFill"></image>
+    </view>
+    <!--商品展示-->
+    <view class="goods-list">
+      <!-- <view class="goods-title">{{item.name}}</view> -->
+      <view wx:for="{{categoryList[currentTab].subcategories}}" class="goods" wx:key="subcategories" bindtap="ToSearchResult" id="{{item.name}}">
+        <image class="img" src="{{item.category_front_image}}" wx:if="{{item.category_front_image}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
